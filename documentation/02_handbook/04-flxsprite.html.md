@@ -33,13 +33,13 @@ add(whiteSquare);
 
 ### Properties
 
-####Position: x, y
+#### Position: x, y
 ```haxe
 whiteSquare.x = 100;
 whiteSquare.y = 300;
 ```
 
-####Size: width, height
+#### Size: width, height
 
 Automatically set in `loadGraphic()` or `makeGraphic()`, changing this will only affect the hitbox of this sprite, use `scale` to change the graphic's size.
 ```haxe
@@ -51,7 +51,7 @@ whiteSquare.width = 100;
 whiteSquare.height = 100;
 ```
 
-####Scale
+#### Scale
 **(FlxPoint)**
 Change the size of your sprite's graphic. *NOTE: The hitbox is not automatically adjusted, use `updateHitbox()` for that (or `setGraphicSize()`).*
 ```haxe
@@ -62,14 +62,14 @@ whiteSquare.scale.set(2, 2);
 whiteSquare.scale.set(0.5, 0.5);
 ```
 
-####Offset
+#### Offset
 **(FlxPoint)**
 Controls the position of the sprite's hitbox. Likely needs to be adjusted after changing a sprite's width, height or scale.
 ```haxe
 whiteSquare.offset.set(50, 50);
 ```
 
-####Origin
+#### Origin
 **(FlxPoint)**
 Rotation axis. **Default: center.**
 
@@ -79,7 +79,7 @@ Rotation axis. **Default: center.**
 whiteSquare.origin.set(0, 0);
 ```
 
-#### ​kill()
+#### kill()
 
 This method is useful for when you want to hide a sprite from the stage but keep it available to reuse later. For example you may want to respawn an enemy the player has killed.
 
@@ -94,7 +94,9 @@ Flixel supports spritesheet animation.
 ![](../images/02_handbook/sprite-animation-example.png)
 
 ```haxe
+// Load a spritesheet where the size of each sprite is 32x36 pixels.
 player.loadGraphic("assets/player.png", true, 32, 36);
+// Add an animation named "walk", which plays frames 0, 1, 0, 2 at 5 FPS, with looping.
 player.animation.add("walk", [0, 1, 0, 2], 5, true);
 player.animation.play("walk");
 ```
